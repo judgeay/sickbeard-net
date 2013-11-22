@@ -1,0 +1,5 @@
+themoviedb.org
+thetvdb.com
+
+http://thetvdb.com/wiki/index.php?title=Programmers_API#Example_Usage
+https://code.google.com/p/sickbeardnet/

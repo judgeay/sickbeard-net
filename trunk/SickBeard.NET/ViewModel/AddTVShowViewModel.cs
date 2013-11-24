@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SickBeard.NET.ViewModel
 {
-    public class AddShowViewModel : ViewModelBase
+    public class AddTVShowViewModel : ViewModelBase
     {
         private string _tvShowName;
         private ObservableCollection<TVShow> _tvShows;

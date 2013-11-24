@@ -1,14 +1,16 @@
 ﻿<Window x:Class="SickBeard.NET.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="SickBeard.NET" Height="350" Width="525">
+        xmlns:view="clr-namespace:SickBeard.NET.View"
+        WindowStartupLocation="CenterScreen"
+        Title="SickBeard.NET" Height="700" Width="1200" Icon="Resources/mainIcon.png">
     <Grid>
         <TabControl Name="mainTabControl">
             <TabItem Header="Films">
 
             </TabItem>
-            <TabItem Header="Series">
-
+            <TabItem Header="Séries">
+                <view:TVShowView />
             </TabItem>
             <TabItem Header="Torrent">
 

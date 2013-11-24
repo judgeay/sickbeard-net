@@ -31,6 +31,17 @@ namespace SickBeard.NET.View
 
         private void btnSearch_Click_1(object sender, RoutedEventArgs e)
         {
+            TVShowSearch();
+        }
+
+        private void Window_KeyUp_1(object sender, KeyEventArgs e)
+        {
+            if (txtBlockTvShowName.IsFocused && e.Key == Key.Enter)
+                TVShowSearch();
+        }
+
+        private void TVShowSearch()
+        {
             var vm = this.DataContext as AddShowViewModel;
             if (vm == null) return;
 
@@ -38,12 +49,6 @@ namespace SickBeard.NET.View
             if (tvShowsList == null) return;
 
             vm.TVShows = new System.Collections.ObjectModel.ObservableCollection<TVShow>(tvShowsList);
-        }
-
-        private void Window_KeyUp_1(object sender, KeyEventArgs e)
-        {
-            if (txtBlockTvShowName.IsFocused && e.Key == Key.Enter)
-                btnSearch_Click_1(this, new RoutedEventArgs());
         }
     }
 }

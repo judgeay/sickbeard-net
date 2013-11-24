@@ -56,10 +56,14 @@
     </ApplicationDefinition>
     <Compile Include="Program.cs" />
     <Compile Include="Model\TVShow.cs" />
-    <Compile Include="ViewModel\AddShowViewModel.cs" />
+    <Compile Include="ViewModel\AddTVShowViewModel.cs" />
+    <Compile Include="ViewModel\TVShowViewModel.cs" />
     <Compile Include="ViewModel\ViewModelBase.cs" />
-    <Compile Include="View\AddShow.xaml.cs">
-      <DependentUpon>AddShow.xaml</DependentUpon>
+    <Compile Include="View\AddTVShowView.xaml.cs">
+      <DependentUpon>AddTVShowView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\TVShowView.xaml.cs">
+      <DependentUpon>TVShowView.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -73,7 +77,11 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="View\AddShow.xaml">
+    <Page Include="View\AddTVShowView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\TVShowView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -105,6 +113,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Resources\mainIcon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

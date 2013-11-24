@@ -18,20 +18,26 @@ namespace SickBeard.NET.View
     /// <summary>
     /// Logique d'interaction pour AddShow.xaml
     /// </summary>
-    public partial class AddShow : Window
+    public partial class AddTVShowView : Window
     {
-        public AddShow()
+        public AddTVShowView()
         {
             InitializeComponent();
 
-            this.DataContext = new AddShowViewModel();
+            this.DataContext = new AddTVShowViewModel();
 
             txtBlockTvShowName.Focus();
         }
 
-        private void btnSearch_Click_1(object sender, RoutedEventArgs e)
+        private void TVShowSearch()
         {
-            TVShowSearch();
+            var vm = this.DataContext as AddTVShowViewModel;
+            if (vm == null) return;
+
+            var tvShowsList = TVShow.FromTheTVDB(vm.TVShowName);
+            if (tvShowsList == null) return;
+
+            vm.TVShows = new System.Collections.ObjectModel.ObservableCollection<TVShow>(tvShowsList);
         }
 
         private void Window_KeyUp_1(object sender, KeyEventArgs e)
@@ -40,15 +46,14 @@ namespace SickBeard.NET.View
                 TVShowSearch();
         }
 
-        private void TVShowSearch()
+        private void btnSearch_Click_1(object sender, RoutedEventArgs e)
         {
-            var vm = this.DataContext as AddShowViewModel;
-            if (vm == null) return;
+            TVShowSearch();
+        }
 
-            var tvShowsList = TVShow.FromTheTVDB(vm.TVShowName);
-            if (tvShowsList == null) return;
-
-            vm.TVShows = new System.Collections.ObjectModel.ObservableCollection<TVShow>(tvShowsList);
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            DialogResult = true;
         }
     }
 }

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SickBeard.NET.ViewModel
 {
-    public class AddShowViewModel : INotifyPropertyChanged
+    public class AddShowViewModel : ViewModelBase
     {
         private string _tvShowName;
         private ObservableCollection<TVShow> _tvShows;
@@ -31,14 +31,6 @@ namespace SickBeard.NET.ViewModel
                 _tvShows = value;
                 RaisePropertyChanged("TVShows");
             }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        public void RaisePropertyChanged(string propertyName)
-        {
-            if (PropertyChanged != null)
-                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

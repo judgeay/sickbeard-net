@@ -55,8 +55,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Program.cs" />
-    <Compile Include="TVShow.cs" />
+    <Compile Include="Model\TVShow.cs" />
     <Compile Include="ViewModel\AddShowViewModel.cs" />
+    <Compile Include="ViewModel\ViewModelBase.cs" />
     <Compile Include="View\AddShow.xaml.cs">
       <DependentUpon>AddShow.xaml</DependentUpon>
     </Compile>
